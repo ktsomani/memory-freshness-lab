@@ -9,12 +9,14 @@ export type ReadRequest = {
   mode: Mode
   stage: Stage
   scheduledMs: number
+  signal?: AbortSignal
 }
 
 export interface MemoryTransport {
   put(
     namespace: string,
     document: { id: string; content: string; date: string; dreaming: Mode },
+    signal?: AbortSignal,
   ): Promise<unknown>
   read(request: ReadRequest): Promise<{ raw: unknown; text: string[] }>
 }
@@ -37,13 +39,15 @@ async function jsonRequest(
   body: unknown,
   timeoutMs: number,
   http: typeof fetch,
+  signal?: AbortSignal,
 ): Promise<Json> {
+  const timeout = AbortSignal.timeout(timeoutMs)
   const response = await http(url, {
     method: "POST",
     redirect: "error",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     body: JSON.stringify(body),
-    signal: AbortSignal.timeout(timeoutMs),
+    signal: signal ? AbortSignal.any([signal, timeout]) : timeout,
   })
   if (!response.ok)
     throw new HttpError(
@@ -68,24 +72,25 @@ export function createSupermemory(
   const path = (namespace: string, route: string) =>
     `${base}/${encodeURIComponent(namespace)}/${route}`
   return {
-    async put(namespace, document) {
-      const raw = await jsonRequest(path(namespace, "document"), key, document, timeoutMs, http)
+    async put(namespace, document, signal) {
+      const raw = await jsonRequest(path(namespace, "document"), key, document, timeoutMs, http, signal)
       if (typeof raw.id !== "string" || typeof raw.status !== "string")
         throw new Error("Invalid document acknowledgement")
       if (raw.status === "failed")
         throw new Error("Supermemory rejected the document during processing")
       return raw
     },
-    async read({ namespace, surface, query }) {
+    async read({ namespace, surface, query, signal }) {
       const raw =
         surface === "profile"
-          ? await jsonRequest(path(namespace, "profile"), key, {}, timeoutMs, http)
+          ? await jsonRequest(path(namespace, "profile"), key, {}, timeoutMs, http, signal)
           : await jsonRequest(
               path(namespace, "search"),
               key,
               { query, searchMode: "hybrid", limit },
               timeoutMs,
               http,
+              signal,
             )
       if (surface === "profile") {
         const profile = raw.profile

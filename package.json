@@ -8,6 +8,6 @@
   },
   "scripts": {
     "lab": "node --experimental-strip-types --disable-warning=ExperimentalWarning src/cli.ts",
-    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test tests/lab.test.ts"
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test tests/lab.test.ts experiments/voice/voice.test.ts"
   }
 }

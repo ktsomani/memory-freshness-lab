@@ -10,6 +10,8 @@ In a 12-scenario holdout across four fact types, instant profiles showed the cor
 
 [Read the findings and view the chart](results/four-fact-holdout/) · [Study protocol](docs/holdout-protocol.md)
 
+The [voice call demo](experiments/voice/) compares a call-start snapshot with a per-turn lookup and a bounded fallback. It supports both saved evidence replay and live Supermemory calls with an optional on-device microphone.
+
 ## Quick start
 
 Requires Node.js 22.13 or later. The harness has zero runtime dependencies.

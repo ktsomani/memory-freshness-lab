@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Voice Memory Lab</title>
+    <link rel="stylesheet" href="/style.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="context">Memory Freshness Lab</p>
+        <h1>Voice Memory Lab</h1>
+        <p class="intro">Change a stored fact while the call stays open. Compare what a frozen profile and a per-turn lookup would say next.</p>
+      </header>
+      <section class="session" aria-label="Replay controls">
+        <div class="call-detail">
+          <div><span class="dot" id="dot"></span><strong id="status">Call ready</strong></div>
+          <p id="scope">Loading saved evidence…</p>
+        </div>
+        <div class="controls">
+          <button id="start" class="primary" disabled>Start call</button>
+          <button id="change" disabled>Send correction</button>
+          <button id="current" disabled>Ask current value</button>
+          <button id="history" disabled>Ask previous value</button>
+          <button id="microphone" disabled>Ask by voice</button>
+          <button id="slow" disabled>Simulate slow lookup</button>
+          <button id="interrupt" disabled>Interrupt</button>
+          <button id="end" class="quiet" disabled>End call</button>
+        </div>
+      </section>
+      <p class="interaction" id="notice" role="status"></p>
+      <section class="lanes" aria-label="Policy comparison">
+        <article class="lane">
+          <div class="lane-heading"><h2>Call-start profile</h2><button id="play-frozen" class="quiet" disabled>Play answer</button></div>
+          <div class="answer" id="frozen" aria-live="polite">Waiting for a question</div>
+          <p class="timing" id="frozen-timing"></p>
+          <details id="frozen-source" hidden><summary>Evidence</summary><ul></ul></details>
+        </article>
+        <article class="lane fresh">
+          <div class="lane-heading"><h2>Per-turn lookup</h2><button id="play-fresh" class="quiet" disabled>Play answer</button></div>
+          <div class="answer" id="fresh" aria-live="polite">Waiting for a question</div>
+          <p class="timing" id="fresh-timing"></p>
+          <details id="fresh-source" hidden><summary>Evidence</summary><ul></ul></details>
+        </article>
+      </section>
+      <section class="trace">
+        <div class="lane-heading"><h2>Call trace</h2><button id="export" class="quiet" disabled>Download JSON</button></div>
+        <ol id="events" aria-live="polite"></ol>
+      </section>
+      <p class="note" id="mode-note">Audio uses the browser’s local speech synthesis when available.</p>
+    </main>
+  </body>
+</html>
