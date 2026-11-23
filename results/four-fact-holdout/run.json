@@ -1,0 +1,184 @@
+{
+  "version": 1,
+  "runId": "four-fact-holdout-public",
+  "mode": "live",
+  "createdAt": "2026-11-23T03:17:55.558Z",
+  "datasetSha256": "592426a65efccdae7bf76e42617762c67b678287ec020acd47a213eb9835d439",
+  "trials": [
+    {
+      "id": "drink-correction",
+      "variant": "correction",
+      "fact": {
+        "id": "drink",
+        "name": "Blair",
+        "scenario": "Blair is updating a recurring café order.",
+        "field": "usual café drink",
+        "old": "iced matcha",
+        "next": "hot chai",
+        "distractor": "On Fridays I sometimes meet a friend at the café."
+      }
+    },
+    {
+      "id": "drink-late-import",
+      "variant": "late-import",
+      "fact": {
+        "id": "drink",
+        "name": "Blair",
+        "scenario": "Blair is updating a recurring café order.",
+        "field": "usual café drink",
+        "old": "iced matcha",
+        "next": "hot chai",
+        "distractor": "On Fridays I sometimes meet a friend at the café."
+      }
+    },
+    {
+      "id": "drink-unrelated-control",
+      "variant": "unrelated-control",
+      "fact": {
+        "id": "drink",
+        "name": "Blair",
+        "scenario": "Blair is updating a recurring café order.",
+        "field": "usual café drink",
+        "old": "iced matcha",
+        "next": "hot chai",
+        "distractor": "On Fridays I sometimes meet a friend at the café."
+      }
+    },
+    {
+      "id": "timezone-correction",
+      "variant": "correction",
+      "fact": {
+        "id": "timezone",
+        "name": "Cameron",
+        "scenario": "Cameron is setting preferences for scheduling calls.",
+        "field": "meeting time zone",
+        "old": "Pacific Time",
+        "next": "Mountain Time",
+        "distractor": "I prefer calls with a written agenda."
+      }
+    },
+    {
+      "id": "timezone-late-import",
+      "variant": "late-import",
+      "fact": {
+        "id": "timezone",
+        "name": "Cameron",
+        "scenario": "Cameron is setting preferences for scheduling calls.",
+        "field": "meeting time zone",
+        "old": "Pacific Time",
+        "next": "Mountain Time",
+        "distractor": "I prefer calls with a written agenda."
+      }
+    },
+    {
+      "id": "timezone-unrelated-control",
+      "variant": "unrelated-control",
+      "fact": {
+        "id": "timezone",
+        "name": "Cameron",
+        "scenario": "Cameron is setting preferences for scheduling calls.",
+        "field": "meeting time zone",
+        "old": "Pacific Time",
+        "next": "Mountain Time",
+        "distractor": "I prefer calls with a written agenda."
+      }
+    },
+    {
+      "id": "editor-correction",
+      "variant": "correction",
+      "fact": {
+        "id": "editor",
+        "name": "Devon",
+        "scenario": "Devon is onboarding to a software team.",
+        "field": "primary code editor",
+        "old": "Neovim",
+        "next": "Zed",
+        "distractor": "I want code reviews to include a short summary."
+      }
+    },
+    {
+      "id": "editor-late-import",
+      "variant": "late-import",
+      "fact": {
+        "id": "editor",
+        "name": "Devon",
+        "scenario": "Devon is onboarding to a software team.",
+        "field": "primary code editor",
+        "old": "Neovim",
+        "next": "Zed",
+        "distractor": "I want code reviews to include a short summary."
+      }
+    },
+    {
+      "id": "editor-unrelated-control",
+      "variant": "unrelated-control",
+      "fact": {
+        "id": "editor",
+        "name": "Devon",
+        "scenario": "Devon is onboarding to a software team.",
+        "field": "primary code editor",
+        "old": "Neovim",
+        "next": "Zed",
+        "distractor": "I want code reviews to include a short summary."
+      }
+    },
+    {
+      "id": "airport-correction",
+      "variant": "correction",
+      "fact": {
+        "id": "airport",
+        "name": "Harper",
+        "scenario": "Harper travels frequently for work.",
+        "field": "preferred departure airport",
+        "old": "Oakland",
+        "next": "San Jose",
+        "distractor": "I try to book nonstop flights."
+      }
+    },
+    {
+      "id": "airport-late-import",
+      "variant": "late-import",
+      "fact": {
+        "id": "airport",
+        "name": "Harper",
+        "scenario": "Harper travels frequently for work.",
+        "field": "preferred departure airport",
+        "old": "Oakland",
+        "next": "San Jose",
+        "distractor": "I try to book nonstop flights."
+      }
+    },
+    {
+      "id": "airport-unrelated-control",
+      "variant": "unrelated-control",
+      "fact": {
+        "id": "airport",
+        "name": "Harper",
+        "scenario": "Harper travels frequently for work.",
+        "field": "preferred departure airport",
+        "old": "Oakland",
+        "next": "San Jose",
+        "distractor": "I try to book nonstop flights."
+      }
+    }
+  ],
+  "checkpointsMs": [
+    0,
+    5000,
+    15000,
+    30000,
+    60000,
+    120000
+  ],
+  "baselineMs": [
+    0,
+    15000,
+    30000,
+    60000,
+    120000,
+    240000
+  ],
+  "searchLimit": 10,
+  "concurrency": 4,
+  "requestTimeoutMs": 10000
+}

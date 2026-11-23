@@ -1,0 +1,110 @@
+[
+  {
+    "id": "shipping",
+    "name": "Avery",
+    "scenario": "Avery is handling personal online orders.",
+    "field": "shipping city",
+    "old": "Boston",
+    "next": "Seattle",
+    "distractor": "I am ordering a new pair of headphones this month."
+  },
+  {
+    "id": "drink",
+    "name": "Blair",
+    "scenario": "Blair is updating a recurring café order.",
+    "field": "usual café drink",
+    "old": "iced matcha",
+    "next": "hot chai",
+    "distractor": "On Fridays I sometimes meet a friend at the café."
+  },
+  {
+    "id": "timezone",
+    "name": "Cameron",
+    "scenario": "Cameron is setting preferences for scheduling calls.",
+    "field": "meeting time zone",
+    "old": "Pacific Time",
+    "next": "Mountain Time",
+    "distractor": "I prefer calls with a written agenda."
+  },
+  {
+    "id": "editor",
+    "name": "Devon",
+    "scenario": "Devon is onboarding to a software team.",
+    "field": "primary code editor",
+    "old": "Neovim",
+    "next": "Zed",
+    "distractor": "I want code reviews to include a short summary."
+  },
+  {
+    "id": "payment",
+    "name": "Ellis",
+    "scenario": "Ellis is arranging reimbursements for a book club.",
+    "field": "preferred payment method",
+    "old": "bank transfer",
+    "next": "paper check",
+    "distractor": "Please send a receipt after each reimbursement."
+  },
+  {
+    "id": "notification",
+    "name": "Finley",
+    "scenario": "Finley is managing notifications from a volunteer project.",
+    "field": "preferred notification channel",
+    "old": "email",
+    "next": "text message",
+    "distractor": "A weekly summary would be helpful."
+  },
+  {
+    "id": "meeting-day",
+    "name": "Gray",
+    "scenario": "Gray is setting a standing tutoring session.",
+    "field": "usual tutoring day",
+    "old": "Tuesday",
+    "next": "Thursday",
+    "distractor": "Please bring practice sheets to each session."
+  },
+  {
+    "id": "airport",
+    "name": "Harper",
+    "scenario": "Harper travels frequently for work.",
+    "field": "preferred departure airport",
+    "old": "Oakland",
+    "next": "San Jose",
+    "distractor": "I try to book nonstop flights."
+  },
+  {
+    "id": "language",
+    "name": "Indigo",
+    "scenario": "Indigo is setting account preferences for workshop materials.",
+    "field": "preferred language for workshop materials",
+    "old": "French",
+    "next": "Portuguese",
+    "distractor": "Send the slides as a PDF."
+  },
+  {
+    "id": "framework",
+    "name": "Jordan",
+    "scenario": "Jordan is maintaining a small internal dashboard.",
+    "field": "preferred test framework",
+    "old": "Jest",
+    "next": "Vitest",
+    "distractor": "Start the release checklist with a smoke test."
+  },
+  {
+    "id": "workspace",
+    "name": "Kai",
+    "scenario": "Kai is arranging membership at a shared office.",
+    "field": "usual coworking location",
+    "old": "River Annex",
+    "next": "Cedar Hall",
+    "distractor": "I need a quiet place for interviews."
+  },
+  {
+    "id": "breakfast",
+    "name": "Lane",
+    "scenario": "Lane is setting up recurring breakfast orders.",
+    "field": "usual breakfast order",
+    "old": "banana oatmeal",
+    "next": "avocado toast",
+    "distractor": "Please send the order confirmation before 8 AM."
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "name": "memory-freshness-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "lab": "node --experimental-strip-types --disable-warning=ExperimentalWarning src/cli.ts",
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test tests/lab.test.ts"
+  }
+}
